@@ -155,6 +155,10 @@ class AmazonS3FileBackend extends FileBackendStore {
 			$params['endpoint'] = $config['endpoint'];
 		}
 
+		if ( isset( $config['bucket_endpoint'] ) ) {
+			$params['bucket_endpoint'] = $config['bucket_endpoint'];
+		}
+
 		$this->client = new S3Client( $params );
 
 		if ( isset( $config['containerPaths'] ) ) {
